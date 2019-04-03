@@ -35,6 +35,8 @@ sh 'cat result'
 }
 }
 stage('Deploy') {
+node() {
 echo 'Deploying....'
+}
 }
 }
