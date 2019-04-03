@@ -26,7 +26,6 @@ catch (e) {
 finally {
       echo 'Executa sempre.'
       }
-
 sh 'cat README.md'
 sh 'printenv'
           def ambiente = input id: 'test', message: 'Please Provide Parameters', ok: 'Next',
