@@ -10,6 +10,11 @@ deleteDir()
 checkout scm
 sh "echo 'res' > result"
 stash includes: '**/result', name: 'app'
+if (env.BUILD_ID.toInteger() % 2 == 0) {
+   echo 'Execucao PAR'
+    } else {
+      echo 'Execucao IMPAR'
+        }          
 sh 'cat README.md'
 sh 'printenv'
           def ambiente = input id: 'test', message: 'Please Provide Parameters', ok: 'Next',
