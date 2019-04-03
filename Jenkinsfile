@@ -5,11 +5,9 @@ deleteDir()
 checkout scm
 sh 'cat README.md'
 }
-stage('Setup'){
-mvn install
-}  
 stage('Test') {
 echo 'Testing..'
+mvn install
 mvn test
 }
 stage('Deploy') {
