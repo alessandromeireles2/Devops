@@ -26,12 +26,6 @@ catch (e) {
 finally {
       echo 'Executa sempre.'
       }*/
-withCredentials([string(credentialsId: 'segredo', variable: 'SEGREDO')]) {
-sh '''
-           set +x
-           echo $SEGREDO
-         '''
-       }
 sh 'cat README.md'
 sh 'printenv'
           def ambiente = input id: 'test', message: 'Please Provide Parameters', ok: 'Next',
