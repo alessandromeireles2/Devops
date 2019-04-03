@@ -15,7 +15,7 @@ if (env.BUILD_ID.toInteger() % 2 == 0) {
     } else {
       echo 'Execucao IMPAR'
       } 
-try {
+/*try {
       sh "exit ${exitCode}"
       echo 'Sucesso!'
       }
@@ -25,7 +25,13 @@ catch (e) {
       }
 finally {
       echo 'Executa sempre.'
-      }
+      }*/
+withCredentials([string(credentialsId: 'segredo', variable: 'SEGREDO')]) {
+sh '''
+           set +x
+           echo $SEGREDO
+         '''
+       }
 sh 'cat README.md'
 sh 'printenv'
           def ambiente = input id: 'test', message: 'Please Provide Parameters', ok: 'Next',
