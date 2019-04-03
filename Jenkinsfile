@@ -29,14 +29,14 @@ node() {
 echo 'Testing..'
 parallel FrontendTests: { echo 'Testing Frontend..' },
           BackendTests: { echo 'Testing Backend..' }
-deleteDir()
-unstash 'app'
-sh 'cat result'          
 }
 }
 stage('Deploy') {
 node() {
 echo 'Deploying....'
+deleteDir()
+unstash 'app'
+sh 'cat result'    
 }
 }
 }
