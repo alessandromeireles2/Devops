@@ -36,7 +36,8 @@ node() {
 echo 'Deploying....'
 deleteDir()
 unstash 'app'
-sh 'cat result'    
+sh 'cat result'
+archiveArtifacts artifacts: '**/result', fingerprint: true
 }
 }
 }
