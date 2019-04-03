@@ -8,6 +8,8 @@ echo "Hello Mr. ${username}"
 echo "Running ${env.JOB_NAME} (${env.BUILD_ID}) at ${env.JENKINS_URL}"  
 deleteDir()
 checkout scm
+sh "echo 'res' > result"
+stash includes: '**/result', name: 'app'
 sh 'cat README.md'
 sh 'printenv'
           def ambiente = input id: 'test', message: 'Please Provide Parameters', ok: 'Next',
