@@ -33,6 +33,7 @@ parallel FrontendTests: { echo 'Testing Frontend..' },
 unstash 'app'
 sh 'cat result'*/          
 }
+}
 stage('Deploy') {
 echo 'Deploying....'
 }
