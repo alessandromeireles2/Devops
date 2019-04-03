@@ -24,10 +24,13 @@ sh 'printenv'
 exitCode = ambiente['EXIT']
 echo "${ambiente}"
 }
-stage('Test') {
+stage('Test') node("php") {
 echo 'Testing..'
 parallel FrontendTests: { echo 'Testing Frontend..' },
           BackendTests: { echo 'Testing Backend..' }
+deleteDir()
+unstash 'app'
+sh 'cat result'          
 }
 stage('Deploy') {
 echo 'Deploying....'
