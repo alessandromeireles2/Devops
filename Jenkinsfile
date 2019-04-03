@@ -29,9 +29,9 @@ node() {
 echo 'Testing..'
 parallel FrontendTests: { echo 'Testing Frontend..' },
           BackendTests: { echo 'Testing Backend..' }
-/*deleteDir()
+deleteDir()
 unstash 'app'
-sh 'cat result'*/          
+sh 'cat result'          
 }
 }
 stage('Deploy') {
