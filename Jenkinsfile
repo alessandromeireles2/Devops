@@ -1,4 +1,3 @@
-Jenkinsfile (Scripted Pipeline)
 node {
     checkout scm
 
