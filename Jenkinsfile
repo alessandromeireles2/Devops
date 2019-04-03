@@ -32,12 +32,12 @@ echo "${ambiente}"
 stage('Test') {
 node() {
 echo 'Testing..'
-retry(3) {
+/*retry(3) {
 sh './flakey-deploy.sh'
 }
 timeout(time: 3, unit: 'MINUTES') {
 sh './health-check.sh'
-}
+}*/
 parallel FrontendTests: { echo 'Testing Frontend..' },
           BackendTests: { echo 'Testing Backend..' }
 }
