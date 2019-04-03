@@ -24,6 +24,8 @@ echo "${ambiente}"
 }
 stage('Test') {
 echo 'Testing..'
+parallel FrontendTests: { echo 'Testing Frontend..' },
+BackendTests: { echo 'Testing Backend..' }
 }
 stage('Deploy') {
 echo 'Deploying....'
