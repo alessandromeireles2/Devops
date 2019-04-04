@@ -15,7 +15,7 @@ if (env.BUILD_ID.toInteger() % 2 == 0) {
     } else {
       echo 'Execucao IMPAR'
       } 
-/*try {
+try {
       sh "exit ${exitCode}"
       echo 'Sucesso!'
       }
@@ -23,7 +23,7 @@ catch (e) {
       echo 'Falhou.'
         // throw e
       }
-finally {
+/*finally {
       echo 'Executa sempre.'
       }*/
 sh 'cat README.md'
